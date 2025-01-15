@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 
+import com.example.myapplication.data.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 

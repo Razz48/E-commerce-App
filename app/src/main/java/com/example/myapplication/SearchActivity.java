@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.myapplication.data.Product;
 import com.example.myapplication.databinding.ActivitySearchBinding;
 import com.example.myapplication.utils.DataHelper;
 

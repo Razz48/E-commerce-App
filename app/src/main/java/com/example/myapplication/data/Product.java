@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,15 +11,8 @@ public class Product implements Parcelable {
     private final String imagePath;
     private String type;
     private String genre;
+    private String purchasedDate;
 
-    // Constructor with genre
-    public Product(String name, String price, String imagePath, String type, String genre) {
-        this.name = name;
-        this.price = price;
-        this.imagePath = imagePath;
-        this.type = type;
-        this.genre = genre;
-    }
 
     protected Product(Parcel in) {
         name = in.readString();
@@ -27,6 +20,7 @@ public class Product implements Parcelable {
         imagePath = in.readString();
         type = in.readString();
         genre = in.readString();
+        purchasedDate = in.readString();
     }
 
     public static final Creator<Product> CREATOR = new Creator<Product>() {
@@ -69,6 +63,14 @@ public class Product implements Parcelable {
         this.genre = genre;
     }
 
+    public String getPurchasedDate() {
+        return purchasedDate;
+    }
+
+    public void setPurchasedDate(String purchasedDate) {
+        this.purchasedDate = purchasedDate;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -81,6 +83,7 @@ public class Product implements Parcelable {
         dest.writeString(imagePath);
         dest.writeString(type);
         dest.writeString(genre);
+        dest.writeString(purchasedDate);
     }
 }
 

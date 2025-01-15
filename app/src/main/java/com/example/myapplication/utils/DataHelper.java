@@ -3,7 +3,7 @@ package com.example.myapplication.utils;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.myapplication.Product;
+import com.example.myapplication.data.Product;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

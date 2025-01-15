@@ -1,18 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="0dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:paddingEnd="15dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:paddingEnd="10dp"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:id="@+id/txt_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:text="Detail"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- Product Image -->
     <ImageView
         android:id="@+id/iv_product_detail_image"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@id/toolbar_detail"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="16dp"
+        android:scaleType="centerCrop" />
 
     <!-- Product Name -->
     <TextView
@@ -21,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_product_detail_image"
         android:layout_marginTop="16dp"
+        android:paddingHorizontal="16dp"
         android:text="Product Name"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -30,7 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_product_detail_name"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp">
 
         <TextView
             android:id="@+id/product_type"
@@ -69,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutType"
         android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp"
         android:text="Price"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp" />
@@ -79,10 +120,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Add to Cart"
+        android:layout_marginTop="16dp"
         android:background="@color/teal_200"
+        android:paddingHorizontal="16dp"
+        android:text="Add to Cart"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:layout_marginTop="16dp" />
+        android:textStyle="bold" />
 </RelativeLayout>
