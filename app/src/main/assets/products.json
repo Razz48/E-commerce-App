@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Don Quixote",
+    "price": "$120",
+    "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7uz0DNYz9a05dFiBvgvNYJ4GmV6cbjxUWUSWJrMcxqyAOlp5v",
+    "type": "book",
+    "genre": "adventure"
+  },
+  {
+    "name": "A Court Of Thorns & Roses",
+    "price": "$800",
+    "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZyEUScaTnehxsV6AZzsPhtro2xxn6QCwlA5J700ws1Mccylkw",
+    "type": "book",
+    "genre": "romance"
+  },
+  {
+    "name": "Astrobiology",
+    "price": "$150",
+    "imagePath": "https://image.ebooks.com/cover/1426618.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "science"
+  },
+  {
+    "name": "The Lazy Universe",
+    "price": "$1000",
+    "imagePath": "https://image.ebooks.com/cover/95766874.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "history"
+  },
+  {
+    "name": "Atomic Habits",
+    "price": "$250",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/9781473565425.jpg",
+    "type": "audiobook",
+    "genre": "personal"
+  },
+  {
+    "name": "Kids' Stories",
+    "price": "$2.95",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/9798368919423.jpg",
+    "type": "audiobook",
+    "genre": "kid"
+  },
+  {
+    "name": "High Fidelity",
+    "price": "$5.75",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/9780241973080.jpg",
+    "type": "audiobook",
+    "genre": "fiction"
+  },
+  {
+    "name": "The Ninth",
+    "price": "$3.62",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/9781664922921.jpg",
+    "type": "audiobook",
+    "genre": "adventure"
+  },
+  {
+    "name": "Heart of Darkness",
+    "price": "$1500",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/SABTAXX978043.jpg",
+    "type": "audiobook",
+    "genre": "action"
+  },
+  {
+    "name": "Never Let Me Go",
+    "price": "$300",
+    "imagePath": "https://image.ebooks.com/cover/210914901.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "sci-fi"
+  },
+  {
+    "name": "Scaling Up",
+    "price": "$2.99",
+    "imagePath": "https://image.ebooks.com/cover/209668244.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "business"
+  },
+  {
+    "name": "A Spy Alone",
+    "price": "$0.99",
+    "imagePath": "https://image.ebooks.com/cover/210861139.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "thriller"
+  },
+  {
+    "name": "In too Deep",
+    "price": "$27.99",
+    "imagePath": "https://image.ebooks.com/cover/211132891.jpg?width=332&height=500&quality=85",
+    "type": "book",
+    "genre": "thriller"
+  },
+  {
+    "name": "Shadow of Doubt",
+    "price": "$3.99",
+    "imagePath": "https://covers.audiobooks.com/images/covers/full/9781797174976.jpg",
+    "type": "audiobook",
+    "genre": "thriller"
+  }
+]

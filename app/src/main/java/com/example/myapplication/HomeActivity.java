@@ -1,9 +1,9 @@
 package com.example.myapplication;
 
 
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.myapplication.utils.DataHelper;
+
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
@@ -29,19 +30,8 @@ public class HomeActivity extends AppCompatActivity {
         rvProducts = findViewById(R.id.rv_products);
         ivSearch = findViewById(R.id.iv_search);
         ivCart = findViewById(R.id.iv_cart);
-
-        // Sample Product Data
-        productList = new ArrayList<>();
-        productList.add(new Product("Laptop", "$1200", R.drawable.photos));
-        productList.add(new Product("Phone", "$800", R.drawable.photos));
-        productList.add(new Product("Headphones", "$150", R.drawable.photos));
-        productList.add(new Product("Camera", "$1000", R.drawable.photos));
-        productList.add(new Product("Watch", "$250", R.drawable.photos));
-        productList.add(new Product("Laptop", "$1200", R.drawable.photos));
-        productList.add(new Product("Phone", "$800", R.drawable.photos));
-        productList.add(new Product("Headphones", "$150", R.drawable.photos));
-        productList.add(new Product("Camera", "$1000", R.drawable.photos));
-        productList.add(new Product("Watch", "$250", R.drawable.photos));
+        productList = DataHelper.loadProducts(this);
+        Log.e("HomeAtivity", "product list " + productList);
 
         // Setup RecyclerView
         productAdapter = new ProductAdapter(this, productList);

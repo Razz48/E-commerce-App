@@ -52,10 +52,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         String formattedPrice = String.format("Price: $%.2f", priceValue);
 
         holder.tvProductPrice.setText(formattedPrice);
-        //holder.ivProductImage.setImageResource(product.getImageResId());
+        //holder.ivProductImage.setImageResource(product.getImagePath());
 
         Glide.with(holder.ivProductImage.getContext())
-                .load(product.getImageResId())
+                .load(product.getImagePath())
                 .into(holder.ivProductImage);
 
         // Handle remove from cart

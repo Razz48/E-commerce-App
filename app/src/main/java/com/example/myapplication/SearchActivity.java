@@ -1,20 +1,25 @@
 package com.example.myapplication;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 import android.os.Bundle;
-import android.widget.SearchView;
+import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.databinding.ActivitySearchBinding;
+import com.example.myapplication.utils.DataHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private SearchView searchView;
-    private RecyclerView rvSearchResults;
+    private ActivitySearchBinding binding;
     private ProductAdapter searchAdapter;
     private List<Product> productList;
     private List<Product> searchResults;
@@ -22,55 +27,62 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
 
-        searchView = findViewById(R.id.search_view);
-        rvSearchResults = findViewById(R.id.rv_search_results);
+        binding = ActivitySearchBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        // Get product list from HomeActivity (mock data for now)
-        productList = getSampleProducts();
+        productList = DataHelper.loadProducts(this);
+        Log.e("SearchActivty", "productList = " + productList);
         searchResults = new ArrayList<>();
 
-        // Setup RecyclerView
-        searchAdapter = new ProductAdapter(this, searchResults);
-        rvSearchResults.setLayoutManager(new LinearLayoutManager(this));
-        rvSearchResults.setAdapter(searchAdapter);
+        binding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchActivity.super.onBackPressed();
+            }
+        });
 
         // Handle Search Query
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                filterResults(query);
-                return true;
+                return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filterResults(newText);
-                return true;
+                if (newText.length() > 1) {
+                    binding.noResults.setVisibility(View.GONE);
+                    binding.searchResults.setVisibility(VISIBLE);
+                    filterResults(newText);
+                } else {
+                    if (searchAdapter != null) searchAdapter.notifyDataSetChanged();
+                }
+                return false;
             }
         });
     }
+
 
     // Filter products based on search query
     private void filterResults(String query) {
         searchResults.clear();
         for (Product product : productList) {
-            if (product.getName().toLowerCase().contains(query.toLowerCase())) {
+            if (product.getName().toLowerCase().contains(query.toLowerCase()) || product.getType().toLowerCase().contains(query.toLowerCase())){
                 searchResults.add(product);
             }
         }
-        searchAdapter.notifyDataSetChanged();
-    }
+        Log.e("SearchActivty", "search results " + searchResults);
+        if (!searchResults.isEmpty()) {
+            binding.noResults.setVisibility(GONE);
+            binding.searchResults.setVisibility(VISIBLE);
+            searchAdapter = new ProductAdapter(this, searchResults);
+            binding.searchResults.setLayoutManager(new LinearLayoutManager(this));
+            binding.searchResults.setAdapter(searchAdapter);
+        } else {
+            binding.noResults.setVisibility(VISIBLE);
+            binding.searchResults.setVisibility(GONE);
+        }
 
-    // Mock product data
-    private List<Product> getSampleProducts() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("Laptop", "$1200", R.drawable.photos));
-        products.add(new Product("Phone", "$800", R.drawable.photos));
-        products.add(new Product("Headphones", "$150", R.drawable.photos));
-        products.add(new Product("Camera", "$1000", R.drawable.photos));
-        products.add(new Product("Watch", "$250", R.drawable.photos));
-        return products;
     }
 }

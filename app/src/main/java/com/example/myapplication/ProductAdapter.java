@@ -37,9 +37,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product product = productList.get(position);
         holder.tvName.setText(product.getName());
         holder.tvPrice.setText(product.getPrice());
-        //holder.ivProduct.setImageResource(product.getImageResId());
+        holder.genre.setText("• " + product.getGenre());
+        holder.productType.setText("• " + product.getType());
+
         Glide.with(holder.ivProduct.getContext())
-                .load(product.getImageResId())
+                .load(product.getImagePath())
                 .into(holder.ivProduct);
 
 
@@ -47,9 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("product_name", product.getName());
-                intent.putExtra("product_price", product.getPrice());
-                intent.putExtra("product_image", product.getImageResId());
+                intent.putExtra("product", product);
                 context.startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvPrice;
+        TextView tvName, tvPrice,genre,productType;
         ImageView ivProduct;
 
         public ProductViewHolder(@NonNull View itemView) {
@@ -69,6 +69,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             tvName = itemView.findViewById(R.id.tv_product_name);
             tvPrice = itemView.findViewById(R.id.tv_product_price);
             ivProduct = itemView.findViewById(R.id.iv_product_image);
+            genre = itemView.findViewById(R.id.genre);
+            productType = itemView.findViewById(R.id.product_type);
         }
     }
 }
