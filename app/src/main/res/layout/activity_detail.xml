@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/iv_product_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true" />
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/tv_product_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_product_detail_image"
+        android:layout_marginTop="16dp"
+        android:text="Product Name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Product Price -->
+    <TextView
+        android:id="@+id/tv_product_detail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_product_detail_name"
+        android:layout_marginTop="8dp"
+        android:text="Price"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp" />
+
+    <!-- Add to Cart Button -->
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Add to Cart"
+        android:background="@color/teal_200"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>

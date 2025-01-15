@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Success Icon -->
+    <ImageView
+        android:id="@+id/iv_success"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_success"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Order Confirmation Message -->
+    <TextView
+        android:id="@+id/tv_order_confirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Confirmed!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_200"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_order_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you for shopping with us."
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Return to Home Button -->
+    <Button
+        android:id="@+id/btn_return_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return to Home"
+        android:background="@color/teal_200"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:padding="12dp" />
+</LinearLayout>
